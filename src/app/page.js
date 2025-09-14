@@ -224,7 +224,6 @@ const TalentriyaWebsite = () => {
       className={`relative px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-300 hover:text-blue-600 ${
         active ? "text-blue-600" : "text-gray-700"
       }`}
-      style={{ fontFamily: "Cambria, serif" }}
     >
       {children}
       {active && (
@@ -501,7 +500,7 @@ const TalentriyaWebsite = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 sm:py-20 bg-white" style={{ fontFamily: 'Cambria, serif' }}>
+      <section id="about" className="py-16 sm:py-20 bg-white" >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
             <span className="px-3 sm:px-4 py-1 sm:py-2 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-semibold">
