@@ -41,7 +41,7 @@ import {
   Twitter,
 } from "lucide-react";
 
-const TruvedaWebsite = () => {
+const TalentriyaWebsite = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -224,6 +224,7 @@ const TruvedaWebsite = () => {
       className={`relative px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-300 hover:text-blue-600 ${
         active ? "text-blue-600" : "text-gray-700"
       }`}
+      style={{ fontFamily: "Cambria, serif" }}
     >
       {children}
       {active && (
@@ -233,7 +234,7 @@ const TruvedaWebsite = () => {
   );
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white" >
       {/* Navigation */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
@@ -252,8 +253,8 @@ const TruvedaWebsite = () => {
                 </div>
               </div>
               <div>
-                <span className="text-lg sm:text-2xl font-bold text-blue-800">Truveda</span>
-                <div className="text-xs sm:text-xs text-gray-600 font-medium">Compliance Solutions</div>
+                <span className="text-lg sm:text-2xl font-bold text-blue-800">Talentriya</span>
+                <div className="text-xs sm:text-xs text-gray-600 font-medium">Consultant Services</div>
               </div>
             </div>
 
@@ -264,14 +265,14 @@ const TruvedaWebsite = () => {
                 <NavLink href="about" active={activeSection === "about"}>About</NavLink>
                 <NavLink href="services" active={activeSection === "services"}>Services</NavLink>
                 <NavLink href="technology" active={activeSection === "technology"}>Technology</NavLink>
-                <NavLink href="contact" active={activeSection === "contact"}>Get in Touch</NavLink>
+                <NavLink href="contact" active={activeSection === "contact"}>Get a Quote</NavLink>
               </div>
               <div className="hidden lg:block">
                 <button
                   onClick={() => scrollToSection("contact")}
                   className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-sm sm:text-base font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
                 >
-                  Get Started Today
+                  Request a Quote
                 </button>
               </div>
               {/* Mobile Menu Button */}
@@ -292,12 +293,12 @@ const TruvedaWebsite = () => {
                 <NavLink href="about" active={activeSection === "about"}>About</NavLink>
                 <NavLink href="services" active={activeSection === "services"}>Services</NavLink>
                 <NavLink href="technology" active={activeSection === "technology"}>Technology</NavLink>
-                <NavLink href="contact" active={activeSection === "contact"}>Get in Touch</NavLink>
+                <NavLink href="contact" active={activeSection === "contact"}>Get a Quote</NavLink>
                 <button
                   onClick={() => scrollToSection("contact")}
                   className="mt-4 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-sm sm:text-base font-semibold"
                 >
-                  Get Started Today
+                  Request a Quote
                 </button>
               </div>
             </div>
@@ -322,20 +323,21 @@ const TruvedaWebsite = () => {
             <div className="space-y-6 sm:space-y-8" data-aos="fade-right">
               <div>
                 <span className="px-3 sm:px-4 py-1 sm:py-2 bg-blue-900 bg-opacity-70 text-white rounded-full text-xs sm:text-sm font-semibold border border-blue-200">
-                  Future-Ready Solutions
+                  Future-Ready Consulting Solutions
                 </span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Future-Ready
+                Welcome to
                 <span className="block bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                  Consulting
+                  Talentriya
                 </span>
-                Solutions
+                Consultant Services
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-white leading-relaxed">
-                Helping businesses stay compliant, efficient, and ahead of the curve with tailored 
-                workforce compliance and technology-driven solutions. At Truveda, we partner with 
-                businesses to simplify complex compliance challenges.
+                At Talentriya, we take the complexity out of compliance, payroll, and recruitment, 
+                delivering streamlined, reliable solutions that empower your business to grow with 
+                confidence. Driven by advanced technology and deep industry expertise, we stand for 
+                <strong> trust, transparency, and transformation</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
@@ -343,7 +345,7 @@ const TruvedaWebsite = () => {
                   className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-sm sm:text-base font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
                 >
                   <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Get Started Today
+                  Request a Quote
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button
@@ -489,7 +491,7 @@ const TruvedaWebsite = () => {
                     )}
                   </button>
                   <p className="text-xs text-white text-center">
-                    By submitting, you agree to receive communication from Truveda about your inquiry.
+                    By submitting, you agree to receive communication from Talentriya about your inquiry.
                   </p>
                 </form>
               </div>
@@ -499,61 +501,21 @@ const TruvedaWebsite = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 sm:py-20 bg-white">
+      <section id="about" className="py-16 sm:py-20 bg-white" style={{ fontFamily: 'Cambria, serif' }}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
             <span className="px-3 sm:px-4 py-1 sm:py-2 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-semibold">
-              About Truveda
+              About Talentriya
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 sm:mt-4 mb-4 sm:mb-6">
-              Your Trusted
-              <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Compliance Partner
-              </span>
+              About Talentriya
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Truveda is a trusted compliance and workforce consulting company helping businesses navigate 
-              the ever-evolving regulatory landscape. We deliver end-to-end compliance solutions, 
-              technology-driven tools, and personalized strategies that make managing compliance effortless.
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
+              Talentriya is a forward-thinking consulting partner specializing in compliance, payroll, and recruitment solutions designed to meet the evolving needs of modern businesses.<br/>
+              With a strong foundation in process excellence and regulatory expertise, we deliver results through a structured, milestone-driven approach that ensures accuracy, efficiency, and continuity. Our phased delivery model enables seamless transitions—minimizing risk, enhancing operational performance, and empowering organizations to focus on strategic growth.<br/>
+              At Talentriya, we don’t just provide services we build long term value through trust, precision, and a commitment to excellence.
             </p>
           </div>
-
-          {/* Leadership Section */}
-          <div className="mb-12 sm:mb-16" data-aos="fade-right">
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 sm:p-12">
-              <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Our Leadership</h3>
-                  <div className="mb-4 sm:mb-6">
-                    <h4 className="text-xl sm:text-2xl font-bold text-blue-800 mb-1 sm:mb-2">Mr. Raju Thoutam</h4>
-                    <div className="text-sm sm:text-base text-blue-600 font-semibold mb-3 sm:mb-4">Founder & CEO</div>
-                  </div>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-6">
-                    With extensive experience in compliance consulting and workforce management, 
-                    Mr. Raju Thoutam has been at the forefront of helping organizations navigate 
-                    complex labor laws and regulatory frameworks. His leadership philosophy focuses 
-                    on innovation, transparency, and customer-centric solutions.
-                  </p>
-                  <blockquote className="text-lg sm:text-xl italic text-blue-700 border-l-4 border-blue-500 pl-4 sm:pl-6">
-                    &quot;Compliance shouldn&apos;t be a burden; it should be a strategic advantage.&quot;
-                  </blockquote>
-                </div>
-                <div data-aos="flip-left" data-aos-delay="200">
-                  <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
-                    <div className="text-center">
-                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-white text-2xl sm:text-4xl font-bold">
-                        RT
-                      </div>
-                      <h4 className="text-lg sm:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Leadership Excellence</h4>
-                      <p className="text-sm sm:text-base text-gray-600">Guiding businesses to sustainable growth</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Vision & Mission */}
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-6 sm:p-8" data-aos="fade-right">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
@@ -561,166 +523,86 @@ const TruvedaWebsite = () => {
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Our Vision</h3>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                To be the most trusted partner for organizations by delivering innovative, reliable, 
-                and future-ready compliance solutions that enable sustainable business growth.
+                To be the most trusted and innovative partner in compliance, payroll, and recruitment, redefining how businesses navigate regulatory and talent challenges through technology, expertise, and an unwavering commitment to transparency and integrity.
               </p>
             </div>
-            
             <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-3xl p-6 sm:p-8" data-aos="fade-left">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
                 <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Our Mission</h3>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                We aim to simplify compliance through cutting-edge technology, expert guidance, 
-                and customer-first strategies that empower businesses to focus on growth while 
-                staying fully compliant.
+                To empower businesses by delivering seamless, technology-driven solutions in compliance, payroll, and recruitment, simplifying regulatory complexities with precision, reliability, and industry leading expertise.
               </p>
             </div>
           </div>
-
-          {/* Core Values */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "Innovation",
-                description: "Cutting-edge technology solutions for modern compliance challenges.",
-                color: "from-blue-500 to-blue-600"
-              },
-              {
-                icon: Heart,
-                title: "Transparency",
-                description: "Open communication and honest guidance in all our partnerships.",
-                color: "from-indigo-500 to-indigo-600"
-              },
-              {
-                icon: Users,
-                title: "Customer-First",
-                description: "Your success is our priority. We tailor solutions to your needs.",
-                color: "from-purple-500 to-purple-600"
-              },
-              {
-                icon: TrendingUp,
-                title: "Excellence",
-                description: "Delivering superior results through expertise and dedication.",
-                color: "from-cyan-500 to-cyan-600"
-              }
-            ].map((value, index) => (
-              <div
-                key={index}
-                className="text-center p-6 sm:p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${value.color} rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg`}>
-                  <value.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">{value.title}</h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
-            <span className="px-3 sm:px-4 py-1 sm:py-2 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-semibold">
-              Comprehensive Compliance Services
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 sm:mt-4 mb-4 sm:mb-6">
-              End-to-End Solutions
-              <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                For Your Business
-              </span>
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
-              Keep your business compliant, secure, and future-ready with our comprehensive compliance management solutions.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id={"services"}>
             {[
               {
                 title: "Payroll Compliance",
-                description: "Ensure accurate payroll processing, statutory deductions, and timely submissions.",
+                description: "Ensuring your business fully complies with local, national, and industry-specific payroll regulations—from accurate tax withholdings to mandated employee benefits.",
                 icon: ClipboardList,
                 color: "from-blue-500 to-blue-600"
               },
               {
                 title: "End-to-End Compliance",
-                description: "A complete compliance management solution tailored to your organization's needs.",
+                description: "Delivering comprehensive solutions that cover every facet of statutory and regulatory obligations with robust, end-to-end labor compliance services.",
                 icon: Shield,
                 color: "from-indigo-500 to-indigo-600"
               },
               {
-                title: "Contract Labor Compliance",
-                description: "Navigate legal frameworks smoothly and manage third-party contractor obligations seamlessly.",
+                title: "Contract Labour Compliance",
+                description: "Ensuring your operations fully comply with the Contract Labour (Regulation & Abolition) Act, fostering fair treatment, safety, and dignity for all contract workers.",
                 icon: UserCheck,
                 color: "from-purple-500 to-purple-600"
               },
               {
                 title: "Factory Compliance",
-                description: "Stay up to date with factory regulations, inspections, and documentation requirements.",
+                description: "Ensuring manufacturing units fully adhere to all statutory obligations under the Factories Act and related labor, safety, and environmental regulations.",
                 icon: Factory,
                 color: "from-cyan-500 to-cyan-600"
               },
               {
                 title: "Inspection Handling",
-                description: "Let our experts manage complex inspection procedures with ease and efficiency.",
+                description: "Expert representation during audits and inspections to ensure regulatory compliance and foster continuous improvement.",
                 icon: FileCheck,
                 color: "from-green-500 to-green-600"
               },
               {
                 title: "Compliance Calendar",
-                description: "Never miss deadlines with our smart compliance calendar and automated reminders.",
+                description: "A structured and proactive tool to track and meet all regulatory, legal, and industry-specific obligations punctually.",
                 icon: Calendar,
                 color: "from-red-500 to-red-600"
               },
               {
-                title: "Records & Returns",
-                description: "Simplify filing statutory records, returns, and related documentation.",
+                title: "Records & Return Compliance",
+                description: "Ensuring accurate, transparent, and fully compliant record-keeping that remains audit-ready at all times.",
                 icon: Database,
                 color: "from-orange-500 to-orange-600"
               },
               {
-                title: "Statutory Registrations",
-                description: "Hassle-free registration services for PF, ESIC, GST, PT, and other statutory requirements.",
+                title: "Statutory Registration & Returns",
+                description: "Ensuring timely and accurate submission of all statutory returns through automated tracking and management systems.",
                 icon: Building,
                 color: "from-yellow-500 to-yellow-600"
               },
               {
-                title: "Social Audits",
-                description: "Ensure ethical compliance standards through professional social compliance audits.",
-                icon: Scale,
+                title: "Licenses & Registrations",
+                description: "Comprehensive management of all business licenses, registrations, renewals, and amendments—ensuring full compliance with applicable laws.",
+                icon: Award,
                 color: "from-pink-500 to-pink-600"
               },
               {
-                title: "Licenses & Registrations",
-                description: "End-to-end licensing support for smooth and compliant business operations.",
-                icon: Award,
+                title: "EPF & ESIC Compliance",
+                description: "Expert services to ensure full compliance with Employees' Provident Fund (EPF) and Employees' State Insurance Corporation (ESIC) regulations.",
+                icon: Briefcase,
                 color: "from-teal-500 to-teal-600"
               },
               {
-                title: "EPF & ESIC Compliance",
-                description: "Complete management of PF and ESIC-related compliances to avoid penalties.",
-                icon: Briefcase,
-                color: "from-violet-500 to-violet-600"
-              },
-              {
                 title: "Government Liaison",
-                description: "Direct coordination with government authorities for quicker and smoother approvals.",
+                description: "Facilitating seamless and effective engagement with government authorities across all levels.",
                 icon: UserCog,
-                color: "from-emerald-500 to-emerald-600"
-              },
-              {
-                title: "NAPS & NATS Apprentice Administration",
-                description: "Simplify apprentice hiring and administration with our seamless compliance solutions.",
-                icon: Users,
-                color: "from-rose-500 to-rose-600"
+                color: "from-violet-500 to-violet-600"
               }
             ].map((service, index) => (
               <div
@@ -740,7 +622,7 @@ const TruvedaWebsite = () => {
                   onClick={() => scrollToSection("contact")}
                   className="w-full py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-sm sm:text-base font-semibold hover:shadow-lg transition-all duration-300"
                 >
-                  Read More
+                  Learn More
                 </button>
               </div>
             ))}
@@ -762,7 +644,9 @@ const TruvedaWebsite = () => {
               </span>
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
-              Designed for accuracy and growth with cutting-edge technology solutions.
+              At Talentriya, technology drives every aspect of our service delivery. Our proprietary software 
+              platform, including an advanced audit system, provides efficient, secure, and scalable compliance 
+              solutions designed to meet the dynamic demands of modern businesses.
             </p>
           </div>
 
@@ -774,7 +658,7 @@ const TruvedaWebsite = () => {
                 </div>
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Streamlined Processes</h3>
-                  <p className="text-sm sm:text-base text-gray-600">Automate manual tasks and save valuable time with our intelligent workflow automation.</p>
+                  <p className="text-sm sm:text-base text-gray-600">Automated workflows that reduce manual effort and minimize errors while maximizing efficiency.</p>
                 </div>
               </div>
               
@@ -784,7 +668,7 @@ const TruvedaWebsite = () => {
                 </div>
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Secure Platform</h3>
-                  <p className="text-sm sm:text-base text-gray-600">Industry-grade security protocols protect your sensitive business data at all times.</p>
+                  <p className="text-sm sm:text-base text-gray-600">Enterprise-grade security safeguarding your sensitive compliance data at all times.</p>
                 </div>
               </div>
               
@@ -794,7 +678,7 @@ const TruvedaWebsite = () => {
                 </div>
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Real-time Insights</h3>
-                  <p className="text-sm sm:text-base text-gray-600">Monitor compliance health with live dashboards and comprehensive reporting tools.</p>
+                  <p className="text-sm sm:text-base text-gray-600">Interactive dashboards delivering up-to-date compliance status and actionable analytics.</p>
                 </div>
               </div>
             </div>
@@ -863,12 +747,12 @@ const TruvedaWebsite = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
             <span className="px-3 sm:px-4 py-1 sm:py-2 bg-white border border-blue-200 text-blue-800 rounded-full text-xs sm:text-sm font-semibold">
-              Get Started with Truveda
+              Get Started with Talentriya
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 sm:mt-4 mb-4 sm:mb-6">
-              Take the First Step
+              Request a Consultation
               <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Toward Simplified Compliance
+                For Tailored Solutions
               </span>
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
@@ -909,7 +793,7 @@ const TruvedaWebsite = () => {
                   </div>
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-1">Visit Us</h3>
-                    <p className="text-sm sm:text-base text-gray-700 mb-1">F-G3, Nelsri Enclave Apartment, KNR Colony, Nizampet, Hyderabad-500090</p>
+                    <p className="text-sm sm:text-base text-gray-700 mb-1">F-G3, Ground Floor, Nelsri Enclave Apartment, KNR Colony, Nizampet, Hyderabad, Telangana-500090</p>
                     <p className="text-xs sm:text-sm text-purple-600">Free consultation available</p>
                   </div>
                 </div>
@@ -917,7 +801,7 @@ const TruvedaWebsite = () => {
 
               {/* Benefits */}
               <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-4 sm:mb-6">Why Choose Truveda?</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-4 sm:mb-6">Why Choose Talentriya?</h3>
                 <div className="space-y-3 sm:space-y-4">
                   {[
                     "Expert compliance consulting team",
@@ -1061,7 +945,7 @@ const TruvedaWebsite = () => {
                   </button>
 
                   <p className="text-xs text-gray-600 text-center">
-                    By submitting, you agree to receive communication from Truveda about your inquiry.
+                    By submitting, you agree to receive communication from Talentriya about your inquiry.
                   </p>
                 </form>
               </div>
@@ -1090,14 +974,14 @@ const TruvedaWebsite = () => {
                   </div>
                   <div>
                     <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
-                      Truveda
+                      Talentriya
                     </span>
                   </div>
                 </div>
                 <p className="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-                  Simplifying labor law compliance through innovative solutions, 
-                  technology, and deep industry expertise. Your trusted partner 
-                  in workforce compliance management.
+                  Empowering businesses through simplified compliance, advanced technology, 
+                  and industry-leading expertise. Your trusted partner in workforce compliance 
+                  management.
                 </p>
                 <div className="flex space-x-3 sm:space-x-4">
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
@@ -1137,7 +1021,7 @@ const TruvedaWebsite = () => {
                   {[
                     { name: 'Home', section: 'home' },
                     { name: 'About Us', section: 'about' },
-                    { name: 'Our Services', section: 'services' },
+                    { name: 'Services', section: 'services' },
                     { name: 'Technology', section: 'technology' },
                     { name: 'Get a Quote', section: 'contact' },
                     { name: 'Contact Us', section: 'contact' }
@@ -1157,7 +1041,7 @@ const TruvedaWebsite = () => {
               {/* Services */}
               <div data-aos="fade-up" data-aos-delay="200">
                 <h3 className="text-lg sm:text-xl font-bold mb-6 sm:mb-8 text-blue-600 relative">
-                  Services
+                  Our Solutions
                   <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-blue-600 rounded-full"></div>
                 </h3>
                 <div className="space-y-3 sm:space-y-4">
@@ -1184,13 +1068,12 @@ const TruvedaWebsite = () => {
               {/* Contact Info */}
               <div data-aos="fade-up" data-aos-delay="300">
                 <h3 className="text-lg sm:text-xl font-bold mb-6 sm:mb-8 text-blue-600 relative">
-                  Contact us
+                  Contact Information
                   <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-blue-600 rounded-full"></div>
                 </h3>
                 <div className="space-y-4 sm:space-y-6">
                   <div>
-                    <p className="text-base sm:text-lg text-white font-bold mb-1 sm:mb-2">Truveda Corporate Solutions</p>
-                    <p className="text-xs sm:text-sm text-gray-400">Private Limited</p>
+                    <p className="text-base sm:text-lg text-white font-bold mb-1 sm:mb-2">Talentriya Consultant Services</p>
                   </div>
                   
                   <div className="space-y-3 sm:space-y-4">
@@ -1200,7 +1083,7 @@ const TruvedaWebsite = () => {
                       </div>
                       <div>
                         <p className="text-xs sm:text-sm text-gray-300 leading-relaxed group-hover:text-white transition-colors">
-                          F-G3, Nelsri Enclave Apartment,<br />
+                          F-G3, Ground Floor, Nelsri Enclave Apartment,<br />
                           KNR Colony, Nizampet,<br />
                           Hyderabad, Telangana-500090
                         </p>
@@ -1240,7 +1123,7 @@ const TruvedaWebsite = () => {
           <div className="border-t border-slate-700 py-6 sm:py-8">
             <div className="flex flex-col lg:flex-row items-center justify-between space-y-3 sm:space-y-4 lg:space-y-0">
               <div className="text-xs sm:text-sm text-gray-400 text-center lg:text-left">
-                © 2025 Truveda. All rights reserved. | Designed with ❤️ for compliance excellence
+                © 2025 Talentriya. All rights reserved. | Designed with ❤️ for compliance excellence
               </div>
               <div className="flex flex-wrap gap-4 sm:gap-8 text-xs sm:text-sm">
                 {[
@@ -1266,5 +1149,4 @@ const TruvedaWebsite = () => {
     </div>
   );
 };
-
-export default TruvedaWebsite;
+export default TalentriyaWebsite;
