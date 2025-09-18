@@ -60,14 +60,14 @@ const TalentriyaWebsite = () => {
     // Initialize AOS
     const initAOS = () => {
       if (typeof window !== 'undefined') {
-        // AOS initialization (mimicking the library)
         const elements = document.querySelectorAll('[data-aos]');
-        
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 entry.target.classList.add('aos-animate');
+              } else {
+                entry.target.classList.remove('aos-animate'); // <-- Add this line
               }
             });
           },
@@ -76,10 +76,8 @@ const TalentriyaWebsite = () => {
             rootMargin: '0px 0px -100px 0px'
           }
         );
-
         elements.forEach((el) => {
           observer.observe(el);
-          // Add initial classes
           el.classList.add('aos-init');
         });
       }
