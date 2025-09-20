@@ -318,7 +318,7 @@ const TalentriyaWebsite = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white" style={{fontFamily: 'Cambria, serif'}}>
+    <div className="min-h-screen bg-white" style={{ fontFamily: "'Segoe UI', system-ui, -apple-system, sans-serif" }}>
       {/* Navigation */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
