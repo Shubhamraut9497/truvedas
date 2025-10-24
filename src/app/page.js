@@ -332,13 +332,13 @@ const TalentriyaWebsite = () => {
             {/* Logo */}
             <div className="flex items-center space-x-3">
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full flex items-center justify-center shadow-lg">
-                  <Shield className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center shadow-lg border-2 border-blue-600">
+                  <span className="text-white font-bold text-xl">T</span>
                 </div>
               </div>
               <div>
-                <span className="text-xl font-bold text-blue-800">Talentriya</span>
-                <div className="text-xs text-gray-600 font-medium">Consultant Services</div>
+                <span className="text-xl font-bold text-blue-800">TRUVEDA</span>
+                <div className="text-xs text-gray-600 font-medium">CORPORATE SOLUTIONS PRIVATE LIMITED</div>
               </div>
             </div>
 
@@ -354,7 +354,7 @@ const TalentriyaWebsite = () => {
               <div className="hidden lg:block">
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                  className="px-6 py-2 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-full text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
                 >
                   Request a Quote
                 </button>
@@ -380,7 +380,7 @@ const TalentriyaWebsite = () => {
                 <NavLink href="contact" active={activeSection === "contact"}>Get a Quote</NavLink>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-base font-semibold"
+                  className="mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-full text-base font-semibold"
                 >
                   Request a Quote
                 </button>
@@ -405,17 +405,9 @@ const TalentriyaWebsite = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Hero Content */}
             <div className="space-y-6" data-aos="fade-right">
-              <div>
-                <span className="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-semibold">
-                  Future-Ready Consulting Solutions
-                </span>
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Welcome to
-                <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  Talentriya
-                </span>
-                <span className="text-3xl lg:text-4xl text-white">Consultant Services</span>
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+                <span className="text-yellow-400">Welcome to Truveda</span>
+                <span className="block text-3xl lg:text-4xl text-white">Future-Ready Consulting Solutions</span>
               </h1>
               <p className="text-lg text-white leading-relaxed">
                 At Talentriya, we take the complexity out of compliance, payroll, and recruitment, 
@@ -426,7 +418,7 @@ const TalentriyaWebsite = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-base font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-full text-base font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
                 >
                   Request a Quote
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -552,7 +544,7 @@ const TalentriyaWebsite = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-base font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center ${
+                    className={`w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-xl text-base font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center ${
                       isSubmitting ? "opacity-75 cursor-not-allowed" : ""
                     }`}
                   >
@@ -677,7 +669,7 @@ const TalentriyaWebsite = () => {
                   
                   <button 
                     onClick={() => scrollToSection("contact")}
-                    className="flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-sm font-semibold hover:shadow-lg transition-all duration-300"
+                    className="flex-1 py-3 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-xl text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
                   >
                     Get Quote
                   </button>
@@ -697,7 +689,7 @@ const TalentriyaWebsite = () => {
             </span>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
               Innovation-Driven
-              <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
                 Solutions
               </span>
             </h2>
@@ -809,7 +801,7 @@ const TalentriyaWebsite = () => {
             </span>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
               Request a Consultation
-              <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
                 For Tailored Solutions
               </span>
             </h2>
@@ -985,7 +977,7 @@ const TalentriyaWebsite = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl text-base font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center ${
+                    className={`w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-xl text-base font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center ${
                       isSubmitting ? "opacity-75 cursor-not-allowed" : ""
                     }`}
                   >
@@ -1027,12 +1019,12 @@ const TalentriyaWebsite = () => {
               {/* Brand Column */}
               <div className="lg:col-span-1" data-aos="fade-up">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg">
-                    <Shield className="w-8 h-8 text-white" />
+                  <div className="w-14 h-14 bg-red-500 rounded-xl flex items-center justify-center shadow-lg border-2 border-blue-600">
+                    <span className="text-white font-bold text-2xl">T</span>
                   </div>
                   <div>
                     <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
-                      Talentriya
+                      TRUVEDA
                     </span>
                   </div>
                 </div>

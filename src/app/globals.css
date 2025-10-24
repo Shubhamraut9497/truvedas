@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,11 +9,16 @@
 :root {
   --font-montserrat: "Montserrat", sans-serif !important;
 }
-
-body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+:root {
+  --color-primary: #1976d2;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
+
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -32,4 +38,15 @@ body {
   /* background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif; */
+}
+
+/* helper classes for places not using Tailwind utilities */
+.text-primary {
+  color: var(--color-primary) !important;
+}
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+.border-primary {
+  border-color: var(--color-primary) !important;
 }
