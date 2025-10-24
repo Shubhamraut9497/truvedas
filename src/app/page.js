@@ -337,7 +337,7 @@ const TalentriyaWebsite = () => {
                 </div>
               </div>
               <div>
-                <span className="text-xl font-bold text-blue-800">TRUVEDA</span>
+                <span className="text-xl font-bold text-blue-800">Talentriya</span>
                 <div className="text-xs text-gray-600 font-medium">CORPORATE SOLUTIONS PRIVATE LIMITED</div>
               </div>
             </div>
@@ -406,7 +406,7 @@ const TalentriyaWebsite = () => {
             {/* Left: Hero Content */}
             <div className="space-y-6" data-aos="fade-right">
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="text-yellow-400">Welcome to Truveda</span>
+                <span className="text-yellow-400">Welcome to Talentriya</span>
                 <span className="block text-3xl lg:text-4xl text-white">Future-Ready Consulting Solutions</span>
               </h1>
               <p className="text-lg text-white leading-relaxed">
@@ -1024,7 +1024,7 @@ const TalentriyaWebsite = () => {
                   </div>
                   <div>
                     <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
-                      TRUVEDA
+                      Talentriya
                     </span>
                   </div>
                 </div>
