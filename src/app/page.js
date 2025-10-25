@@ -61,33 +61,33 @@ const TalentriyaWebsite = () => {
   useEffect(() => {
     // Initialize AOS with fixed animations
     const initAOS = () => {
-      if (typeof window !== 'undefined') {
-        const elements = document.querySelectorAll('[data-aos]');
+      if (typeof window !== "undefined") {
+        const elements = document.querySelectorAll("[data-aos]");
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                entry.target.classList.add('aos-animate');
+                entry.target.classList.add("aos-animate");
               } else {
-                entry.target.classList.remove('aos-animate');
+                entry.target.classList.remove("aos-animate");
               }
             });
           },
           {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: "0px 0px -50px 0px",
           }
         );
         elements.forEach((el) => {
           observer.observe(el);
-          el.classList.add('aos-init');
+          el.classList.add("aos-init");
         });
       }
     };
 
     // Add AOS CSS styles with proper animations
     const addAOSStyles = () => {
-      const style = document.createElement('style');
+      const style = document.createElement("style");
       style.textContent = `
         [data-aos] {
           transition-property: transform, opacity;
@@ -139,25 +139,28 @@ const TalentriyaWebsite = () => {
       setScrollY(currentScrollY);
 
       // Get all sections
-      const sections = ['home', 'about', 'services', 'technology', 'contact'];
-      
+      const sections = ["home", "about", "services", "technology", "contact"];
+
       // Find which section is currently in view
-      let currentSection = 'home';
-      
-      sections.forEach(sectionId => {
+      let currentSection = "home";
+
+      sections.forEach((sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
           const elementTop = rect.top + currentScrollY;
           const elementHeight = rect.height;
-          
+
           // Check if section is in viewport (with some offset for better UX)
-          if (currentScrollY >= elementTop - 200 && currentScrollY < elementTop + elementHeight - 200) {
+          if (
+            currentScrollY >= elementTop - 200 &&
+            currentScrollY < elementTop + elementHeight - 200
+          ) {
             currentSection = sectionId;
           }
         }
       });
-      
+
       setActiveSection(currentSection);
     };
 
@@ -205,7 +208,14 @@ const TalentriyaWebsite = () => {
 
       if (res.ok) {
         setSubmitStatus("success");
-        setFormData({ fullName: "", email: "", companyName: "", services: "", contactNumber: "", message: "" });
+        setFormData({
+          fullName: "",
+          email: "",
+          companyName: "",
+          services: "",
+          contactNumber: "",
+          message: "",
+        });
         setTimeout(() => setSubmitStatus(""), 5000);
       } else {
         setSubmitStatus("error");
@@ -240,85 +250,121 @@ const TalentriyaWebsite = () => {
   const services = [
     {
       title: "Payroll Compliance",
-      shortDescription: "Ensuring your business fully complies with local, national, and industry-specific payroll regulations—from accurate tax withholdings to mandated employee benefits.",
-      fullDescription: "At Talentriya, we understand that payroll compliance extends far beyond timely and precise salary payments. It requires expert navigation of complex labor laws, tax codes, and regulatory reporting. Our comprehensive approach safeguards your business from compliance risks, ensuring operational integrity and peace of mind.",
+      shortDescription:
+        "Ensuring your business fully complies with local, national, and industry-specific payroll regulations—from accurate tax withholdings to mandated employee benefits.",
+      fullDescription:
+        "At Talentriya, we understand that payroll compliance extends far beyond timely and precise salary payments. It requires expert navigation of complex labor laws, tax codes, and regulatory reporting. Our comprehensive approach safeguards your business from compliance risks, ensuring operational integrity and peace of mind.",
       icon: ClipboardList,
-      color: "from-blue-500 to-blue-600"
+      color: "from-blue-500 to-blue-600",
+      image: "/truveda/PayrollCompliance.jpg",
     },
     {
       title: "End-to-End Compliance",
-      shortDescription: "Delivering comprehensive solutions that cover every facet of statutory and regulatory obligations with robust, end-to-end labor compliance services.",
-      fullDescription: "At Talentriya, we offer robust, end-to-end labor compliance services designed to meet all statutory and regulatory requirements. From employee onboarding to audit preparedness, our solutions ensure seamless compliance across jurisdictions. Leveraging deep industry expertise and advanced technology, Talentriya enables your business to operate with confidence, minimize risk, and focus on strategic growth.",
+      shortDescription:
+        "Delivering comprehensive solutions that cover every facet of statutory and regulatory obligations with robust, end-to-end labor compliance services.",
+      fullDescription:
+        "At Talentriya, we offer robust, end-to-end labor compliance services designed to meet all statutory and regulatory requirements. From employee onboarding to audit preparedness, our solutions ensure seamless compliance across jurisdictions. Leveraging deep industry expertise and advanced technology, Talentriya enables your business to operate with confidence, minimize risk, and focus on strategic growth.",
       icon: Shield,
-      color: "from-indigo-500 to-indigo-600"
+      color: "from-indigo-500 to-indigo-600",
+      image: "/truveda/EndToEndCompliance.jpg",
     },
     {
       title: "Contract Labour Compliance",
-      shortDescription: "Ensuring your operations fully comply with the Contract Labour (Regulation & Abolition) Act, fostering fair treatment, safety, and dignity for all contract workers.",
-      fullDescription: "At Talentriya, we believe responsible workforce management starts with strict adherence to labor laws. Our Contract Labour Compliance services ensure your business operates within the legal framework established by the Contract Labour Act, 1970, promoting ethical practices and safeguarding worker welfare. Through comprehensive audit services, we provide detailed assessments of contractor compliance, helping you mitigate regulatory risks and uphold the highest standards of labor ethics.",
+      shortDescription:
+        "Ensuring your operations fully comply with the Contract Labour (Regulation & Abolition) Act, fostering fair treatment, safety, and dignity for all contract workers.",
+      fullDescription:
+        "At Talentriya, we believe responsible workforce management starts with strict adherence to labor laws. Our Contract Labour Compliance services ensure your business operates within the legal framework established by the Contract Labour Act, 1970, promoting ethical practices and safeguarding worker welfare. Through comprehensive audit services, we provide detailed assessments of contractor compliance, helping you mitigate regulatory risks and uphold the highest standards of labor ethics.",
       icon: UserCheck,
-      color: "from-purple-500 to-purple-600"
+      color: "from-purple-500 to-purple-600",
+      image: "/truveda/Contractlabourcompliance-1.jpg",
     },
     {
       title: "Factory Compliance",
-      shortDescription: "Ensuring manufacturing units fully adhere to all statutory obligations under the Factories Act and related labor, safety, and environmental regulations.",
-      fullDescription: "At Talentriya, we recognize that compliance in manufacturing extends beyond production—it's about safeguarding your workforce, reputation, and sustainable operations. Our Factory Compliance services help you meet all legal requirements under the Factories Act, 1948, and other relevant regulations, ensuring your facility remains safe, audit-ready, and fully compliant. Whether you are establishing a new facility or managing existing operations, Talentriya provides the expertise and support needed to maintain the highest standards of regulatory compliance and workplace safety.",
+      shortDescription:
+        "Ensuring manufacturing units fully adhere to all statutory obligations under the Factories Act and related labor, safety, and environmental regulations.",
+      fullDescription:
+        "At Talentriya, we recognize that compliance in manufacturing extends beyond production—it's about safeguarding your workforce, reputation, and sustainable operations. Our Factory Compliance services help you meet all legal requirements under the Factories Act, 1948, and other relevant regulations, ensuring your facility remains safe, audit-ready, and fully compliant. Whether you are establishing a new facility or managing existing operations, Talentriya provides the expertise and support needed to maintain the highest standards of regulatory compliance and workplace safety.",
       icon: Factory,
-      color: "from-cyan-500 to-cyan-600"
+      color: "from-cyan-500 to-cyan-600",
+      image: "/truveda/Factorycompliance-final.jpg",
     },
     {
       title: "Inspection Handling",
-      shortDescription: "Expert representation during audits and inspections to ensure regulatory compliance and foster continuous improvement.",
-      fullDescription: "At Talentriya, we view every inspection and audit as an opportunity to demonstrate our unwavering commitment to quality, compliance, and stakeholder trust. We go beyond simply meeting regulatory requirements we aim to exceed them through transparency, accountability, and a culture dedicated to ongoing enhancement. Our proactive approach ensures your organization remains compliant, resilient, and positioned for sustained success.",
+      shortDescription:
+        "Expert representation during audits and inspections to ensure regulatory compliance and foster continuous improvement.",
+      fullDescription:
+        "At Talentriya, we view every inspection and audit as an opportunity to demonstrate our unwavering commitment to quality, compliance, and stakeholder trust. We go beyond simply meeting regulatory requirements we aim to exceed them through transparency, accountability, and a culture dedicated to ongoing enhancement. Our proactive approach ensures your organization remains compliant, resilient, and positioned for sustained success.",
       icon: FileCheck,
-      color: "from-green-500 to-green-600"
+      color: "from-green-500 to-green-600",
+      image: "/truveda/Inspectionhandling-Final.jpg",
     },
     {
       title: "Compliance Calendar",
-      shortDescription: "A structured and proactive tool to track and meet all regulatory, legal, and industry-specific obligations punctually.",
-      fullDescription: "At Talentriya, proactive compliance is fundamental to operational excellence. Our Compliance Calendar offers a comprehensive, forward-looking framework that ensures your business consistently meets all deadlines and regulatory requirements helping you avoid risks and maintain seamless operations.",
+      shortDescription:
+        "A structured and proactive tool to track and meet all regulatory, legal, and industry-specific obligations punctually.",
+      fullDescription:
+        "At Talentriya, proactive compliance is fundamental to operational excellence. Our Compliance Calendar offers a comprehensive, forward-looking framework that ensures your business consistently meets all deadlines and regulatory requirements helping you avoid risks and maintain seamless operations.",
       icon: Calendar,
-      color: "from-red-500 to-red-600"
+      color: "from-red-500 to-red-600",
+      image: "/truveda/Compliancecalender.jpg",
     },
     {
       title: "Records & Return Compliance",
-      shortDescription: "Ensuring accurate, transparent, and fully compliant record-keeping that remains audit-ready at all times.",
-      fullDescription: "At Talentriya, we prioritize meticulous maintenance of records to meet and exceed regulatory standards. Our comprehensive Records & Return Compliance services guarantee that all data, documents, and registers are securely managed, easily accessible, and prepared for audits providing you with confidence and peace of mind.",
+      shortDescription:
+        "Ensuring accurate, transparent, and fully compliant record-keeping that remains audit-ready at all times.",
+      fullDescription:
+        "At Talentriya, we prioritize meticulous maintenance of records to meet and exceed regulatory standards. Our comprehensive Records & Return Compliance services guarantee that all data, documents, and registers are securely managed, easily accessible, and prepared for audits providing you with confidence and peace of mind.",
       icon: Database,
-      color: "from-orange-500 to-orange-600"
+      color: "from-orange-500 to-orange-600",
+      image: "/truveda/Recordsandreturns.jpg",
     },
     {
       title: "Statutory Registration & Returns",
-      shortDescription: "Ensuring timely and accurate submission of all statutory returns through automated tracking and management systems.",
-      fullDescription: "At Talentriya, we are committed to full compliance with statutory and regulatory requirements. By leveraging advanced automation to monitor deadlines and streamline processes, we guarantee punctual and precise filings of all statutory returns. Our comprehensive approach to Statutory Registration & Returns underscores our dedication to legal integrity and ethical business practices, minimizing risks and fostering trust with regulators, partners, and clients alike.",
+      shortDescription:
+        "Ensuring timely and accurate submission of all statutory returns through automated tracking and management systems.",
+      fullDescription:
+        "At Talentriya, we are committed to full compliance with statutory and regulatory requirements. By leveraging advanced automation to monitor deadlines and streamline processes, we guarantee punctual and precise filings of all statutory returns. Our comprehensive approach to Statutory Registration & Returns underscores our dedication to legal integrity and ethical business practices, minimizing risks and fostering trust with regulators, partners, and clients alike.",
       icon: Building,
-      color: "from-yellow-500 to-yellow-600"
+      color: "from-yellow-500 to-yellow-600",
+      image: "/truveda/Statutoryregistrationandreturn.jpg",
     },
     {
       title: "Licenses & Registrations",
-      shortDescription: "Comprehensive management of all business licenses, registrations, renewals, and amendments—ensuring full compliance with applicable laws.",
-      fullDescription: "At Talentriya, we navigate the complexities of regulatory requirements on your behalf, allowing you to focus on growing your business without the burden of administrative delays or compliance risks. Whether launching a new venture, expanding operations, or adapting to regulatory updates, our experienced team ensures timely, accurate handling of every license and registration, keeping your business fully compliant and operational.",
+      shortDescription:
+        "Comprehensive management of all business licenses, registrations, renewals, and amendments—ensuring full compliance with applicable laws.",
+      fullDescription:
+        "At Talentriya, we navigate the complexities of regulatory requirements on your behalf, allowing you to focus on growing your business without the burden of administrative delays or compliance risks. Whether launching a new venture, expanding operations, or adapting to regulatory updates, our experienced team ensures timely, accurate handling of every license and registration, keeping your business fully compliant and operational.",
       icon: Award,
-      color: "from-pink-500 to-pink-600"
+      color: "from-pink-500 to-pink-600",
+      image: "/truveda/Licenseandregistrations.jpg",
     },
     {
       title: "EPF & ESIC Compliance",
-      shortDescription: "Expert services to ensure full compliance with Employees' Provident Fund (EPF) and Employees' State Insurance Corporation (ESIC) regulations.",
-      fullDescription: "Talentriya provides specialized support to help organizations across industries navigate the complexities of EPF and ESIC statutory requirements. Leveraging deep expertise in labor laws, we ensure accurate adherence to these essential social security schemes—protecting your business from regulatory risks while promoting employee welfare and statutory compliance.",
+      shortDescription:
+        "Expert services to ensure full compliance with Employees' Provident Fund (EPF) and Employees' State Insurance Corporation (ESIC) regulations.",
+      fullDescription:
+        "Talentriya provides specialized support to help organizations across industries navigate the complexities of EPF and ESIC statutory requirements. Leveraging deep expertise in labor laws, we ensure accurate adherence to these essential social security schemes—protecting your business from regulatory risks while promoting employee welfare and statutory compliance.",
       icon: Briefcase,
-      color: "from-teal-500 to-teal-600"
+      color: "from-teal-500 to-teal-600",
+      image: "/truveda/ESIandEPFcompliance.jpg",
     },
     {
       title: "Government Liaison",
-      shortDescription: "Facilitating seamless and effective engagement with government authorities across all levels.",
-      fullDescription: "At Talentriya, we understand that proactive collaboration with regulatory bodies is vital to building a compliant and sustainable business. Our dedicated government liaison team ensures smooth communication and coordination with central, state, and local departments—helping you navigate regulatory requirements efficiently and maintain strong government relations.",
+      shortDescription:
+        "Facilitating seamless and effective engagement with government authorities across all levels.",
+      fullDescription:
+        "At Talentriya, we understand that proactive collaboration with regulatory bodies is vital to building a compliant and sustainable business. Our dedicated government liaison team ensures smooth communication and coordination with central, state, and local departments—helping you navigate regulatory requirements efficiently and maintain strong government relations.",
       icon: UserCog,
-      color: "from-violet-500 to-violet-600"
-    }
+      color: "from-violet-500 to-violet-600",
+      image: "/truveda/Liaisoning.jpg",
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+    <div
+      className="min-h-screen bg-white"
+      style={{ fontFamily: "'Segoe UI', system-ui, -apple-system, sans-serif" }}
+    >
       {/* Navigation */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
@@ -337,26 +383,44 @@ const TalentriyaWebsite = () => {
                 </div>
               </div>
               <div>
-                <span className="text-xl font-bold text-blue-800">Talentriya</span>
-                <div className="text-xs text-gray-600 font-medium">CORPORATE SOLUTIONS PRIVATE LIMITED</div>
+                <span className="text-xl font-bold text-blue-800">
+                  Talentriya
+                </span>
+                <div className="text-xs text-gray-600 font-medium">
+                  {" "}
+                  Consultant Services
+                </div>
               </div>
             </div>
 
             {/* Nav links + CTA, right aligned */}
             <div className="flex items-center ml-auto space-x-4">
               <div className="hidden lg:flex items-center space-x-4">
-                <NavLink href="home" active={activeSection === "home"}>Home</NavLink>
-                <NavLink href="about" active={activeSection === "about"}>About</NavLink>
-                <NavLink href="services" active={activeSection === "services"}>Services</NavLink>
-                <NavLink href="technology" active={activeSection === "technology"}>Technology</NavLink>
-                <NavLink href="contact" active={activeSection === "contact"}>Get a Quote</NavLink>
+                <NavLink href="home" active={activeSection === "home"}>
+                  Home
+                </NavLink>
+                <NavLink href="about" active={activeSection === "about"}>
+                  About
+                </NavLink>
+                <NavLink href="services" active={activeSection === "services"}>
+                  Services
+                </NavLink>
+                <NavLink
+                  href="technology"
+                  active={activeSection === "technology"}
+                >
+                  Technology
+                </NavLink>
+                <NavLink href="contact" active={activeSection === "contact"}>
+                  Contact
+                </NavLink>
               </div>
               <div className="hidden lg:block">
                 <button
                   onClick={() => scrollToSection("contact")}
                   className="px-6 py-2 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-full text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
                 >
-                  Request a Quote
+                  Get Started
                 </button>
               </div>
               {/* Mobile Menu Button */}
@@ -364,7 +428,11 @@ const TalentriyaWebsite = () => {
                 className="lg:hidden p-2 hover:bg-blue-50 rounded-lg transition-colors"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {isMenuOpen ? (
+                  <X className="w-5 h-5" />
+                ) : (
+                  <Menu className="w-5 h-5" />
+                )}
               </button>
             </div>
           </div>
@@ -373,16 +441,29 @@ const TalentriyaWebsite = () => {
           {isMenuOpen && (
             <div className="lg:hidden mt-4 pb-4 bg-white rounded-2xl shadow-xl border border-blue-100 p-6">
               <div className="flex flex-col space-y-4">
-                <NavLink href="home" active={activeSection === "home"}>Home</NavLink>
-                <NavLink href="about" active={activeSection === "about"}>About</NavLink>
-                <NavLink href="services" active={activeSection === "services"}>Services</NavLink>
-                <NavLink href="technology" active={activeSection === "technology"}>Technology</NavLink>
-                <NavLink href="contact" active={activeSection === "contact"}>Get a Quote</NavLink>
+                <NavLink href="home" active={activeSection === "home"}>
+                  Home
+                </NavLink>
+                <NavLink href="about" active={activeSection === "about"}>
+                  About
+                </NavLink>
+                <NavLink href="services" active={activeSection === "services"}>
+                  Services
+                </NavLink>
+                <NavLink
+                  href="technology"
+                  active={activeSection === "technology"}
+                >
+                  Technology
+                </NavLink>
+                <NavLink href="contact" active={activeSection === "contact"}>
+                  Contact
+                </NavLink>
                 <button
                   onClick={() => scrollToSection("contact")}
                   className="mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-full text-base font-semibold"
                 >
-                  Request a Quote
+                  Get Started
                 </button>
               </div>
             </div>
@@ -395,7 +476,8 @@ const TalentriyaWebsite = () => {
         id="home"
         className="min-h-screen flex items-center pt-20 pb-8 relative bg-gradient-to-br from-blue-50 to-indigo-100"
         style={{
-          backgroundImage: "linear-gradient(to bottom right, #18181b99, #18181b99), url('/hero-section.jpg')",
+          backgroundImage:
+            "linear-gradient(to bottom right, #18181b99, #18181b99), url('/hero-section.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -407,22 +489,23 @@ const TalentriyaWebsite = () => {
             <div className="space-y-6" data-aos="fade-right">
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
                 <span className="text-yellow-400">Welcome to Talentriya</span>
-                <span className="block text-3xl lg:text-4xl text-white">Future-Ready Consulting Solutions</span>
+                <span className="block text-3xl lg:text-4xl text-white">
+                  Future-Ready Consulting Solutions
+                </span>
               </h1>
               <p className="text-lg text-white leading-relaxed">
-                At Talentriya, we take the complexity out of compliance, payroll, and recruitment, 
-                delivering streamlined, reliable solutions that empower your business to grow with 
-                confidence. Driven by advanced technology and deep industry expertise, we stand for 
-                <strong className="text-white"> trust, transparency, and transformation</strong>.
+                At Talentriya, we take the complexity out of compliance,
+                payroll, and recruitment, delivering streamlined, reliable
+                solutions that empower your business to grow with confidence.
+                Driven by advanced technology and deep industry expertise, we
+                stand for
+                <strong className="text-white">
+                  {" "}
+                  trust, transparency, and transformation
+                </strong>
+                .
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-full text-base font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
-                >
-                  Request a Quote
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
                 <button
                   onClick={() => scrollToSection("about")}
                   className="px-8 py-4 border-2 border-white text-white rounded-full text-base font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center justify-center"
@@ -431,43 +514,38 @@ const TalentriyaWebsite = () => {
                   Learn More
                 </button>
               </div>
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 pt-8" data-aos="fade-up" data-aos-delay="300">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white">500+</div>
-                  <div className="text-sm text-white">Happy Clients</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white">15+</div>
-                  <div className="text-sm text-white">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white">99%</div>
-                  <div className="text-sm text-white">Compliance Rate</div>
-                </div>
-              </div>
             </div>
             {/* Right: Contact Form */}
             <div data-aos="fade-left" data-aos-delay="200">
               <div className="max-w-md mx-auto bg-white rounded-3xl p-6 shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Get Started Today</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                  Get Started Today
+                </h3>
                 {submitStatus === "success" && (
                   <div className="mb-6 p-4 bg-green-100 border border-green-300 rounded-xl flex items-center">
                     <CheckCircle className="w-6 h-6 text-green-600 mr-3" />
                     <div>
-                      <div className="text-base font-semibold text-green-800">Thank you!</div>
-                      <div className="text-sm text-green-700">We&apos;ll contact you within 24 hours.</div>
+                      <div className="text-base font-semibold text-green-800">
+                        Thank you!
+                      </div>
+                      <div className="text-sm text-green-700">
+                        We&apos;ll contact you within 24 hours.
+                      </div>
                     </div>
                   </div>
                 )}
                 {submitStatus === "error" && (
                   <div className="mb-6 p-4 bg-red-100 border border-red-300 rounded-xl">
-                    <div className="text-base text-red-800 font-semibold">Error sending message. Please call us directly.</div>
+                    <div className="text-base text-red-800 font-semibold">
+                      Error sending message. Please call us directly.
+                    </div>
                   </div>
                 )}
                 <form onSubmit={submitForm} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Full Name *
+                    </label>
                     <input
                       type="text"
                       name="fullName"
@@ -479,7 +557,9 @@ const TalentriyaWebsite = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Email Address *
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -491,7 +571,9 @@ const TalentriyaWebsite = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Company Name *</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Company Name *
+                    </label>
                     <input
                       type="text"
                       name="companyName"
@@ -503,7 +585,9 @@ const TalentriyaWebsite = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Contact Number</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Contact Number
+                    </label>
                     <input
                       type="tel"
                       name="contactNumber"
@@ -514,7 +598,9 @@ const TalentriyaWebsite = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Select Services</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Select Services
+                    </label>
                     <select
                       name="services"
                       value={formData.services}
@@ -524,14 +610,18 @@ const TalentriyaWebsite = () => {
                       <option value="">Select a service</option>
                       <option value="payroll">Payroll Compliance</option>
                       <option value="end-to-end">End-to-End Compliance</option>
-                      <option value="contract-labor">Contract Labor Compliance</option>
+                      <option value="contract-labor">
+                        Contract Labor Compliance
+                      </option>
                       <option value="factory">Factory Compliance</option>
                       <option value="statutory">Statutory Registrations</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Message
+                    </label>
                     <textarea
                       rows={3}
                       name="message"
@@ -561,7 +651,8 @@ const TalentriyaWebsite = () => {
                     )}
                   </button>
                   <p className="text-xs text-gray-600 text-center">
-                    By submitting, you agree to receive communication from Talentriya about your inquiry.
+                    By submitting, you agree to receive communication from
+                    Talentriya about your inquiry.
                   </p>
                 </form>
               </div>
@@ -571,46 +662,108 @@ const TalentriyaWebsite = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-[#f5f5f0]">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
-              About Talentriya
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              About Talentriya
-            </h2>
-            <div className="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-4">
-              <p>
-                Talentriya is a forward-thinking consulting partner specializing in compliance, payroll, and recruitment solutions designed to meet the evolving needs of modern businesses.
-              </p>
-              <p>
-                With a strong foundation in process excellence and regulatory expertise, we deliver results through a structured, milestone-driven approach that ensures accuracy, efficiency, and continuity. Our phased delivery model enables seamless transitions—minimizing risk, enhancing operational performance, and empowering organizations to focus on strategic growth.
-              </p>
-              <p>
-                At Talentriya, we don&apos;t just provide services we build long term value through trust, precision, and a commitment to excellence.
-              </p>
-            </div>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8" data-aos="fade-right">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-white" />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: About Content */}
+            <div className="space-y-8" data-aos="fade-right">
+              <div>
+                <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
+                  About Talentriya
+                </span>
+                <h2 className="text-4xl lg:text-5xl font-bold text-[#0D2B4F] mt-4 mb-6">
+                  About Talentriya
+                </h2>
+                <div className="text-lg text-gray-700 leading-relaxed space-y-4">
+                  <p>
+                    Talentriya is a forward-thinking consulting partner
+                    specializing in compliance, payroll, and recruitment
+                    solutions designed to meet the evolving needs of modern
+                    businesses.
+                  </p>
+                  <p>
+                    With a strong foundation in process excellence and
+                    regulatory expertise, we deliver results through a
+                    structured, milestone-driven approach that ensures accuracy,
+                    efficiency, and continuity. Our phased delivery model
+                    enables seamless transitions—minimizing risk, enhancing
+                    operational performance, and empowering organizations to
+                    focus on strategic growth.
+                  </p>
+                  <p>
+                    At Talentriya, we don&apos;t just provide services we build
+                    long term value through trust, precision, and a commitment
+                    to excellence.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-              <p className="text-base text-gray-700 leading-relaxed">
-                To be the most trusted and innovative partner in compliance, payroll, and recruitment, redefining how businesses navigate regulatory and talent challenges through technology, expertise, and an unwavering commitment to transparency and integrity.
-              </p>
-            </div>
-            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-3xl p-8" data-aos="fade-left">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
-                <Heart className="w-8 h-8 text-white" />
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-3xl p-6 shadow-xl">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    Our Vision
+                  </h3>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    To be the most trusted and innovative partner in compliance,
+                    payroll, and recruitment, redefining how businesses navigate
+                    regulatory and talent challenges.
+                  </p>
+                </div>
+                <div className="bg-white rounded-3xl p-6 shadow-xl ">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    Our Mission
+                  </h3>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    To empower businesses by delivering seamless,
+                    technology-driven solutions in compliance, payroll, and
+                    recruitment.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-              <p className="text-base text-gray-700 leading-relaxed">
-                To empower businesses by delivering seamless, technology-driven solutions in compliance, payroll, and recruitment, simplifying regulatory complexities with precision, reliability, and industry leading expertise.
-              </p>
+            </div>
+
+            {/* Right: About Image */}
+            <div className="flex justify-center" data-aos="fade-left">
+              <div className="relative">
+                <div className=" rounded-3xl shadow-2xl">
+                  <img
+                    src="/truveda-about-us.avif"
+                    alt="Talentriya Team"
+                    className="rounded-2xl shadow-lg w-full h-auto max-w-2xl"
+                    onError={(e) => {
+                      e.target.src =
+                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3Ccircle cx='200' cy='150' r='60' fill='%23dbeafe'/%3E%3Crect x='140' y='230' width='120' height='80' fill='%23dbeafe'/%3E%3Ctext x='200' y='380' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EAbout Talentriya Image%3C/text%3E%3C/svg%3E";
+                    }}
+                  />
+                </div>
+
+                {/* Floating Elements */}
+                {/* <div className="absolute -top-4 -left-4 bg-white rounded-xl p-4 shadow-lg border border-blue-100">
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-5 h-5 text-blue-600" />
+                    <div className="text-xs">
+                      <div className="font-bold text-gray-800">500+</div>
+                      <div className="text-gray-600">Clients</div>
+                    </div>
+                  </div>
+                </div> */}
+
+                {/* <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-lg border border-blue-100">
+                  <div className="flex items-center space-x-2">
+                    <Award className="w-5 h-5 text-green-600" />
+                    <div className="text-xs">
+                      <div className="font-bold text-gray-800">15+</div>
+                      <div className="text-gray-600">Years Exp</div>
+                    </div>
+                  </div>
+                </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -623,36 +776,58 @@ const TalentriyaWebsite = () => {
             <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
               Our Services
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0D2B4F] mt-4 mb-6">
               Comprehensive Compliance Solutions
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              We provide end-to-end compliance services tailored to your business needs, ensuring full regulatory adherence and operational excellence.
+              We provide end-to-end compliance services tailored to your
+              business needs, ensuring full regulatory adherence and operational
+              excellence.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+                className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
                 data-aos="zoom-in"
                 data-aos-delay={index * 50}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-8 h-8 text-white" />
+                {/* Service Image */}
+                <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      e.target.src =
+                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23" +
+                        service.color.split("-")[1].substring(0, 6) +
+                        "'/%3E%3Ctext x='200' y='100' text-anchor='middle' font-family='Arial' font-size='16' fill='white'%3E" +
+                        service.title +
+                        "%3C/text%3E%3C/svg%3E";
+                    }}
+                  />
+                  {/* <div className={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div> */}
                 </div>
-                
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{service.title}</h3>
-                
-                <p className="text-base text-gray-600 mb-4 leading-relaxed">
-                  {expandedService === index ? service.fullDescription : service.shortDescription}
-                </p>
-                
-                <div className="flex gap-3">
-                  <button 
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-base text-gray-600 mb-4 leading-relaxed">
+                    {expandedService === index
+                      ? service.fullDescription
+                      : service.shortDescription}
+                  </p>
+
+                  <button
                     onClick={() => toggleServiceExpansion(index)}
-                    className="flex-1 py-3 bg-gray-100 text-gray-700 rounded-xl text-sm font-semibold hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 flex items-center justify-center"
+                    className="w-full py-3 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-xl text-sm font-semibold hover:bg-blue-50 hover:text-white-200 transition-all duration-300 flex items-center justify-center"
                   >
                     {expandedService === index ? (
                       <>
@@ -666,13 +841,6 @@ const TalentriyaWebsite = () => {
                       </>
                     )}
                   </button>
-                  
-                  <button 
-                    onClick={() => scrollToSection("contact")}
-                    className="flex-1 py-3 bg-gradient-to-r from-blue-500 to-orange-500 text-white rounded-xl text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
-                  >
-                    Get Quote
-                  </button>
                 </div>
               </div>
             ))}
@@ -681,133 +849,153 @@ const TalentriyaWebsite = () => {
       </section>
 
       {/* Technology Section */}
-      <section id="technology" className="py-20 bg-white">
+      <section id="technology" className="py-20 bg-[#f5f5f0]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16" data-aos="fade-up">
-            <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0D2B4F] mb-4">
               Our Technology Advantage
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Innovation-Driven
-              <span className="block bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
-                Solutions
-              </span>
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              At Talentriya, technology drives every aspect of our service delivery. Our proprietary software 
-              platform, including an advanced audit system, provides efficient, secure, and scalable compliance 
-              solutions designed to meet the dynamic demands of modern businesses.
+            <p className="text-lg lg:text-xl font-semibold text-gray-700 mb-8">
+              Innovative solutions powering your compliance management
+            </p>
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              At Talentriya, technology is at the core of everything we do. Our
+              robust software architecture, including our self-developed audit
+              platform, delivers efficient, secure, and scalable compliance
+              solutions tailored to the evolving needs of modern businesses.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
-            <div className="space-y-8" data-aos="fade-right">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Settings className="w-6 h-6 text-white" />
+          <div className="grid lg:grid-cols-3 gap-8 mt-16">
+            {/* Feature 1: Streamlined Processes */}
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="bg-white shadow-lg rounded-2xl p-8 h-full">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Settings className="w-10 h-10 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Streamlined Processes</h3>
-                  <p className="text-base text-gray-600">Automated workflows that reduce manual effort and minimize errors while maximizing efficiency.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Lock className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Secure Platform</h3>
-                  <p className="text-base text-gray-600">Enterprise-grade security safeguarding your sensitive compliance data at all times.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <BarChart3 className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Real-time Insights</h3>
-                  <p className="text-base text-gray-600">Interactive dashboards delivering up-to-date compliance status and actionable analytics.</p>
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Streamlined Processes
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Automated workflows that reduce manual effort and minimize
+                  errors while maximizing efficiency across all compliance
+                  operations.
+                </p>
               </div>
             </div>
 
-            <div className="flex justify-center" data-aos="zoom-in" data-aos-delay="200">
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-3xl p-12 shadow-2xl">
-                  <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-                    <Monitor className="w-20 h-20 text-blue-600 mx-auto mb-4" />
-                    <h4 className="text-2xl font-bold text-gray-800 mb-2">Technology Dashboard</h4>
-                    <p className="text-base text-gray-600">Centralized Control Hub</p>
-                  </div>
+            {/* Feature 2: Secure Platform */}
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="bg-white shadow-lg rounded-2xl p-8 h-full">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Lock className="w-10 h-10 text-white" />
                 </div>
-                
-                {/* Floating Tech Elements */}
-                <div className="absolute -top-4 -left-4 bg-white rounded-xl p-3 shadow-lg border border-blue-100">
-                  <div className="flex items-center space-x-2">
-                    <Clock className="w-5 h-5 text-blue-600" />
-                    <div className="text-xs">
-                      <div className="font-bold text-gray-800">24/7</div>
-                      <div className="text-gray-600">Monitoring</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-3 shadow-lg border border-blue-100">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <div className="text-xs">
-                      <div className="font-bold text-gray-800">99.9%</div>
-                      <div className="text-gray-600">Uptime</div>
-                    </div>
-                  </div>
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Secure Platform
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Enterprise-grade security protecting your sensitive compliance
+                  data with advanced encryption and multi-layer security
+                  protocols.
+                </p>
               </div>
             </div>
 
-            <div className="space-y-6" data-aos="fade-left" data-aos-delay="300">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">500+</div>
-                  <div className="text-base text-gray-700 font-medium">Businesses Trust Our Platform</div>
+            {/* Feature 3: Real-time Insights */}
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div className="bg-white shadow-lg rounded-2xl p-8 h-full">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <BarChart3 className="w-10 h-10 text-white" />
                 </div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-indigo-600">99.5%</div>
-                  <div className="text-base text-gray-700 font-medium">Compliance Accuracy Rate</div>
-                </div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">24/7</div>
-                  <div className="text-base text-gray-700 font-medium">Customer Support</div>
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Real-time Insights
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Dashboard with compliance status and actionable analytics
+                  providing live updates and predictive compliance monitoring.
+                </p>
               </div>
             </div>
           </div>
+
+          {/* Additional Features Grid */}
+          {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+      <div className="text-center" data-aos="zoom-in" data-aos-delay="100">
+        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+          <div className="text-3xl font-bold text-blue-600 mb-2">99.9%</div>
+          <div className="text-gray-700 font-medium">System Uptime</div>
+        </div>
+      </div>
+      <div className="text-center" data-aos="zoom-in" data-aos-delay="200">
+        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+          <div className="text-3xl font-bold text-green-600 mb-2">24/7</div>
+          <div className="text-gray-700 font-medium">Monitoring</div>
+        </div>
+      </div>
+      <div className="text-center" data-aos="zoom-in" data-aos-delay="300">
+        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+          <div className="text-3xl font-bold text-purple-600 mb-2">500+</div>
+          <div className="text-gray-700 font-medium">Active Users</div>
+        </div>
+      </div>
+      <div className="text-center" data-aos="zoom-in" data-aos-delay="400">
+        <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+          <div className="text-3xl font-bold text-orange-600 mb-2">99.5%</div>
+          <div className="text-gray-700 font-medium">Accuracy Rate</div>
+        </div>
+      </div>
+    </div> */}
+
+          {/* CTA Section */}
+          {/* <div className="text-center mt-16" data-aos="fade-up">
+      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl p-12 text-white">
+        <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Compliance Management?</h3>
+        <p className="text-xl mb-8 opacity-90">
+          Experience the power of our technology platform with a personalized demo.
+        </p>
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="px-8 py-4 bg-white text-blue-600 rounded-full text-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-300"
+        >
+          Request a Demo
+        </button>
+      </div>
+    </div> */}
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section
+        id="contact"
+        className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50"
+      >
         <div className="container mx-auto px-6">
           <div className="text-center mb-16" data-aos="fade-up">
             <span className="px-4 py-2 bg-white border border-blue-200 text-blue-800 rounded-full text-sm font-semibold">
               Get Started with Talentriya
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0D2B4F] mt-4 mb-6">
               Request a Consultation
-              <span className="block bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
+              <span className="block text-[#0D2B4F] bg-clip-text ">
                 For Tailored Solutions
               </span>
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Ready to streamline your compliance processes? Our experts are here to guide you 
-              toward smarter workforce solutions and effortless regulatory management.
+              Ready to streamline your compliance processes? Our experts are
+              here to guide you toward smarter workforce solutions and
+              effortless regulatory management.
             </p>
           </div>
 
@@ -820,8 +1008,12 @@ const TalentriyaWebsite = () => {
                     <Phone className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-1">Call Us</h3>
-                    <p className="text-base text-gray-700 mb-1">+91 7032007007</p>
+                    <h3 className="text-xl font-bold text-gray-800 mb-1">
+                      Call Us
+                    </h3>
+                    <p className="text-base text-gray-700 mb-1">
+                      +91 7032007007
+                    </p>
                     <p className="text-sm text-blue-600">Mon-Sat 9AM-7PM</p>
                   </div>
                 </div>
@@ -831,9 +1023,15 @@ const TalentriyaWebsite = () => {
                     <Mail className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-1">Email Us</h3>
-                    <p className="text-base text-gray-700 mb-1">info@talentriya.com</p>
-                    <p className="text-sm text-indigo-600">Response within 24 hours</p>
+                    <h3 className="text-xl font-bold text-gray-800 mb-1">
+                      Email Us
+                    </h3>
+                    <p className="text-base text-gray-700 mb-1">
+                      info@talentriya.com
+                    </p>
+                    <p className="text-sm text-indigo-600">
+                      Response within 24 hours
+                    </p>
                   </div>
                 </div>
 
@@ -842,23 +1040,32 @@ const TalentriyaWebsite = () => {
                     <MapPin className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-1">Visit Us</h3>
-                    <p className="text-base text-gray-700 mb-1">F-G3, Ground Floor, Nelsri Enclave Apartment, KNR Colony, Nizampet, Hyderabad, Telangana-500090</p>
-                    <p className="text-sm text-purple-600">Free consultation available</p>
+                    <h3 className="text-xl font-bold text-gray-800 mb-1">
+                      Visit Us
+                    </h3>
+                    <p className="text-base text-gray-700 mb-1">
+                      F-G3, Ground Floor, Nelsri Enclave Apartment, KNR Colony,
+                      Nizampet, Hyderabad, Telangana-500090
+                    </p>
+                    <p className="text-sm text-purple-600">
+                      Free consultation available
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Benefits */}
               <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">Why Choose Talentriya?</h3>
+                <h3 className="text-xl font-bold text-gray-800 mb-6">
+                  Why Choose Talentriya?
+                </h3>
                 <div className="space-y-4">
                   {[
                     "Expert compliance consulting team",
                     "Technology-driven solutions",
                     "24/7 customer support",
                     "Proven track record with 500+ clients",
-                    "Customized solutions for your business"
+                    "Customized solutions for your business",
                   ].map((benefit, index) => (
                     <div key={index} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
@@ -872,28 +1079,38 @@ const TalentriyaWebsite = () => {
             <div data-aos="fade-left" data-aos-delay="200">
               {/* Contact Form */}
               <div className="bg-white rounded-3xl p-8 shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Get Started Today</h3>
-                
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                  Get Started Today
+                </h3>
+
                 {submitStatus === "success" && (
                   <div className="mb-6 p-4 bg-green-100 border border-green-300 rounded-xl flex items-center">
                     <CheckCircle className="w-6 h-6 text-green-600 mr-3" />
                     <div>
-                      <div className="text-base font-semibold text-green-800">Thank you!</div>
-                      <div className="text-sm text-green-700">We&apos;ll contact you within 24 hours.</div>
+                      <div className="text-base font-semibold text-green-800">
+                        Thank you!
+                      </div>
+                      <div className="text-sm text-green-700">
+                        We&apos;ll contact you within 24 hours.
+                      </div>
                     </div>
                   </div>
                 )}
 
                 {submitStatus === "error" && (
                   <div className="mb-6 p-4 bg-red-100 border border-red-300 rounded-xl">
-                    <div className="text-base text-red-800 font-semibold">Error sending message. Please call us directly.</div>
+                    <div className="text-base text-red-800 font-semibold">
+                      Error sending message. Please call us directly.
+                    </div>
                   </div>
                 )}
 
                 <form onSubmit={submitForm} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Full Name *
+                      </label>
                       <input
                         type="text"
                         name="fullName"
@@ -905,7 +1122,9 @@ const TalentriyaWebsite = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Email Address *
+                      </label>
                       <input
                         type="email"
                         name="email"
@@ -920,7 +1139,9 @@ const TalentriyaWebsite = () => {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Company Name *</label>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Company Name *
+                      </label>
                       <input
                         type="text"
                         name="companyName"
@@ -932,7 +1153,9 @@ const TalentriyaWebsite = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Contact Number</label>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Contact Number
+                      </label>
                       <input
                         type="tel"
                         name="contactNumber"
@@ -945,7 +1168,9 @@ const TalentriyaWebsite = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Select Services</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Select Services
+                    </label>
                     <select
                       name="services"
                       value={formData.services}
@@ -955,7 +1180,9 @@ const TalentriyaWebsite = () => {
                       <option value="">Select a service</option>
                       <option value="payroll">Payroll Compliance</option>
                       <option value="end-to-end">End-to-End Compliance</option>
-                      <option value="contract-labor">Contract Labor Compliance</option>
+                      <option value="contract-labor">
+                        Contract Labor Compliance
+                      </option>
                       <option value="factory">Factory Compliance</option>
                       <option value="statutory">Statutory Registrations</option>
                       <option value="other">Other</option>
@@ -963,7 +1190,9 @@ const TalentriyaWebsite = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Message
+                    </label>
                     <textarea
                       rows={3}
                       name="message"
@@ -995,7 +1224,8 @@ const TalentriyaWebsite = () => {
                   </button>
 
                   <p className="text-xs text-gray-600 text-center">
-                    By submitting, you agree to receive communication from Talentriya about your inquiry.
+                    By submitting, you agree to receive communication from
+                    Talentriya about your inquiry.
                   </p>
                 </form>
               </div>
@@ -1011,7 +1241,7 @@ const TalentriyaWebsite = () => {
           <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full -translate-x-48 -translate-y-48"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full translate-x-48 translate-y-48"></div>
         </div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           {/* Main Footer Content */}
           <div className="py-16">
@@ -1029,27 +1259,39 @@ const TalentriyaWebsite = () => {
                   </div>
                 </div>
                 <p className="text-base text-gray-300 mb-8 leading-relaxed">
-                  Empowering businesses through simplified compliance, advanced technology, 
-                  and industry-leading expertise. Your trusted partner in workforce compliance 
-                  management.
+                  Empowering businesses through simplified compliance, advanced
+                  technology, and industry-leading expertise. Your trusted
+                  partner in workforce compliance management.
                 </p>
                 <div className="flex space-x-4">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-11 h-11 bg-slate-700 hover:bg-blue-600 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
                     <Linkedin className="w-6 h-6 text-white" />
                   </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-11 h-11 bg-slate-700 hover:bg-blue-400 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
                     <Twitter className="w-6 h-6 text-white" />
                   </a>
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-11 h-11 bg-slate-700 hover:bg-blue-700 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
                     <Facebook className="w-6 h-6 text-white" />
                   </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-11 h-11 bg-slate-700 hover:bg-gradient-to-tr hover:from-pink-500 hover:to-yellow-500 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
                     <Instagram className="w-6 h-6 text-white" />
@@ -1065,12 +1307,11 @@ const TalentriyaWebsite = () => {
                 </h3>
                 <div className="space-y-4">
                   {[
-                    { name: 'Home', section: 'home' },
-                    { name: 'About Us', section: 'about' },
-                    { name: 'Services', section: 'services' },
-                    { name: 'Technology', section: 'technology' },
-                    { name: 'Get a Quote', section: 'contact' },
-                    { name: 'Contact Us', section: 'contact' }
+                    { name: "Home", section: "home" },
+                    { name: "About Us", section: "about" },
+                    { name: "Services", section: "services" },
+                    { name: "Technology", section: "technology" },
+                    { name: "Contact Us", section: "contact" },
                   ].map((link) => (
                     <button
                       key={link.name}
@@ -1078,7 +1319,9 @@ const TalentriyaWebsite = () => {
                       className="flex items-center text-base text-gray-300 hover:text-blue-400 transition-all duration-300 text-left group"
                     >
                       <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
+                      <span className="group-hover:translate-x-1 transition-transform">
+                        {link.name}
+                      </span>
                     </button>
                   ))}
                 </div>
@@ -1092,20 +1335,22 @@ const TalentriyaWebsite = () => {
                 </h3>
                 <div className="space-y-4">
                   {[
-                    'Payroll Compliance',
-                    'Licenses & Registrations',
-                    'Contract Labour Compliance',
-                    'Factory Compliance',
-                    'EPF & ESIC Compliance',
-                    'Government Liaison'
+                    "Payroll Compliance",
+                    "Licenses & Registrations",
+                    "Contract Labour Compliance",
+                    "Factory Compliance",
+                    "EPF & ESIC Compliance",
+                    "Government Liaison",
                   ].map((service) => (
                     <button
                       key={service}
-                      onClick={() => scrollToSection('services')}
+                      onClick={() => scrollToSection("services")}
                       className="flex items-center text-base text-gray-300 hover:text-blue-400 transition-all duration-300 text-left group"
                     >
                       <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <span className="group-hover:translate-x-1 transition-transform">{service}</span>
+                      <span className="group-hover:translate-x-1 transition-transform">
+                        {service}
+                      </span>
                     </button>
                   ))}
                 </div>
@@ -1119,9 +1364,11 @@ const TalentriyaWebsite = () => {
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <p className="text-lg text-white font-bold mb-2">Talentriya Consultant Services</p>
+                    <p className="text-lg text-white font-bold mb-2">
+                      Talentriya Consultant Services
+                    </p>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3 group">
                       <div className="w-8 h-8 bg-blue-500 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -1129,31 +1376,33 @@ const TalentriyaWebsite = () => {
                       </div>
                       <div>
                         <p className="text-sm text-gray-300 leading-relaxed group-hover:text-white transition-colors">
-                          F-G3, Ground Floor, Nelsri Enclave Apartment,<br />
-                          KNR Colony, Nizampet,<br />
+                          F-G3, Ground Floor, Nelsri Enclave Apartment,
+                          <br />
+                          KNR Colony, Nizampet,
+                          <br />
                           Hyderabad, Telangana-500090
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center space-x-3 group">
                       <div className="w-8 h-8 bg-blue-500 bg-opacity-20 rounded-lg flex items-center justify-center">
                         <Phone className="w-4 h-4 text-white" />
                       </div>
-                      <a 
-                        href="tel:+917032007007" 
+                      <a
+                        href="tel:+917032007007"
                         className="text-sm text-gray-300 hover:text-blue-400 transition-colors group-hover:underline"
                       >
                         +91 7032007007
                       </a>
                     </div>
-                    
+
                     <div className="flex items-center space-x-3 group">
                       <div className="w-8 h-8 bg-blue-500 bg-opacity-20 rounded-lg flex items-center justify-center">
                         <Mail className="w-4 h-4 text-white" />
                       </div>
-                      <a 
-                        href="mailto:info@talentriya.com" 
+                      <a
+                        href="mailto:info@talentriya.com"
                         className="text-sm text-gray-300 hover:text-blue-400 transition-colors group-hover:underline"
                       >
                         info@talentriya.com
@@ -1169,13 +1418,14 @@ const TalentriyaWebsite = () => {
           <div className="border-t border-slate-700 py-8">
             <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
               <div className="text-sm text-gray-400 text-center lg:text-left">
-                © 2025 Talentriya. All rights reserved. | Designed for compliance excellence
+                © 2025 Talentriya. All rights reserved. | Designed for
+                compliance excellence
               </div>
               <div className="flex flex-wrap gap-8 text-sm">
                 {[
-                  { name: 'Privacy Policy', section: 'contact' },
-                  { name: 'Terms of Service', section: 'contact' },
-                  { name: 'Compliance Standards', section: 'services' }
+                  { name: "Privacy Policy", section: "contact" },
+                  { name: "Terms of Service", section: "contact" },
+                  { name: "Compliance Standards", section: "services" },
                 ].map((link, index) => (
                   <React.Fragment key={link.name}>
                     <button
@@ -1184,7 +1434,9 @@ const TalentriyaWebsite = () => {
                     >
                       {link.name}
                     </button>
-                    {index < 2 && <span className="text-gray-600 hidden sm:inline">•</span>}
+                    {index < 2 && (
+                      <span className="text-gray-600 hidden sm:inline">•</span>
+                    )}
                   </React.Fragment>
                 ))}
               </div>
