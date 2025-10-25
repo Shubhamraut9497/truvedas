@@ -266,7 +266,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we offer robust, end-to-end labor compliance services designed to meet all statutory and regulatory requirements. From employee onboarding to audit preparedness, our solutions ensure seamless compliance across jurisdictions. Leveraging deep industry expertise and advanced technology, Talentriya enables your business to operate with confidence, minimize risk, and focus on strategic growth.",
       icon: Shield,
       color: "from-indigo-500 to-indigo-600",
-      image: "/truveda/EndToendcompliance.jpg",
+      image: "/truveda/Endtoendcompliance.jpg",
     },
     {
       title: "Contract Labour Compliance",
