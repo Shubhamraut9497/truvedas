@@ -256,7 +256,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we understand that payroll compliance extends far beyond timely and precise salary payments. It requires expert navigation of complex labor laws, tax codes, and regulatory reporting. Our comprehensive approach safeguards your business from compliance risks, ensuring operational integrity and peace of mind.",
       icon: ClipboardList,
       color: "from-blue-500 to-blue-600",
-      image: "/truveda/PayrollCompliance.jpg",
+      image: "/truveda/payroll-compliance.webp",
     },
     {
       title: "End-to-End Compliance",
@@ -266,7 +266,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we offer robust, end-to-end labor compliance services designed to meet all statutory and regulatory requirements. From employee onboarding to audit preparedness, our solutions ensure seamless compliance across jurisdictions. Leveraging deep industry expertise and advanced technology, Talentriya enables your business to operate with confidence, minimize risk, and focus on strategic growth.",
       icon: Shield,
       color: "from-indigo-500 to-indigo-600",
-      image: "/truveda/Endtoendcompliance.jpg",
+      image: "/truveda/end-end.jpg",
     },
     {
       title: "Contract Labour Compliance",
@@ -276,7 +276,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we believe responsible workforce management starts with strict adherence to labor laws. Our Contract Labour Compliance services ensure your business operates within the legal framework established by the Contract Labour Act, 1970, promoting ethical practices and safeguarding worker welfare. Through comprehensive audit services, we provide detailed assessments of contractor compliance, helping you mitigate regulatory risks and uphold the highest standards of labor ethics.",
       icon: UserCheck,
       color: "from-purple-500 to-purple-600",
-      image: "/truveda/Contractlabourcompliance-1.jpg",
+      image: "/truveda/contract-labour.png",
     },
     {
       title: "Factory Compliance",
@@ -286,7 +286,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we recognize that compliance in manufacturing extends beyond production—it's about safeguarding your workforce, reputation, and sustainable operations. Our Factory Compliance services help you meet all legal requirements under the Factories Act, 1948, and other relevant regulations, ensuring your facility remains safe, audit-ready, and fully compliant. Whether you are establishing a new facility or managing existing operations, Talentriya provides the expertise and support needed to maintain the highest standards of regulatory compliance and workplace safety.",
       icon: Factory,
       color: "from-cyan-500 to-cyan-600",
-      image: "/truveda/Factorycompliance-final.jpg",
+      image: "/truveda/factory-compliance.png",
     },
     {
       title: "Inspection Handling",
@@ -296,7 +296,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we view every inspection and audit as an opportunity to demonstrate our unwavering commitment to quality, compliance, and stakeholder trust. We go beyond simply meeting regulatory requirements we aim to exceed them through transparency, accountability, and a culture dedicated to ongoing enhancement. Our proactive approach ensures your organization remains compliant, resilient, and positioned for sustained success.",
       icon: FileCheck,
       color: "from-green-500 to-green-600",
-      image: "/truveda/Inspectionhandling-Final.jpg",
+      image: "/truveda/inspection.png",
     },
     {
       title: "Compliance Calendar",
@@ -306,7 +306,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, proactive compliance is fundamental to operational excellence. Our Compliance Calendar offers a comprehensive, forward-looking framework that ensures your business consistently meets all deadlines and regulatory requirements helping you avoid risks and maintain seamless operations.",
       icon: Calendar,
       color: "from-red-500 to-red-600",
-      image: "/truveda/Compliancecalender.jpg",
+      image: "/truveda/compliance-calender.png",
     },
     {
       title: "Records & Return Compliance",
@@ -316,7 +316,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we prioritize meticulous maintenance of records to meet and exceed regulatory standards. Our comprehensive Records & Return Compliance services guarantee that all data, documents, and registers are securely managed, easily accessible, and prepared for audits providing you with confidence and peace of mind.",
       icon: Database,
       color: "from-orange-500 to-orange-600",
-      image: "/truveda/Recordsandreturns.jpg",
+      image: "/truveda/record-return.png",
     },
     {
       title: "Statutory Registration & Returns",
@@ -326,7 +326,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we are committed to full compliance with statutory and regulatory requirements. By leveraging advanced automation to monitor deadlines and streamline processes, we guarantee punctual and precise filings of all statutory returns. Our comprehensive approach to Statutory Registration & Returns underscores our dedication to legal integrity and ethical business practices, minimizing risks and fostering trust with regulators, partners, and clients alike.",
       icon: Building,
       color: "from-yellow-500 to-yellow-600",
-      image: "/truveda/Statutoryregistrationandreturn.jpg",
+      image: "/truveda/statutory-registration.png",
     },
     {
       title: "Licenses & Registrations",
@@ -336,7 +336,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we navigate the complexities of regulatory requirements on your behalf, allowing you to focus on growing your business without the burden of administrative delays or compliance risks. Whether launching a new venture, expanding operations, or adapting to regulatory updates, our experienced team ensures timely, accurate handling of every license and registration, keeping your business fully compliant and operational.",
       icon: Award,
       color: "from-pink-500 to-pink-600",
-      image: "/truveda/Licenseandregistrations.jpg",
+      image: "/truveda/licence-registration.png ",
     },
     {
       title: "EPF & ESIC Compliance",
@@ -346,7 +346,7 @@ const TalentriyaWebsite = () => {
         "Talentriya provides specialized support to help organizations across industries navigate the complexities of EPF and ESIC statutory requirements. Leveraging deep expertise in labor laws, we ensure accurate adherence to these essential social security schemes—protecting your business from regulatory risks while promoting employee welfare and statutory compliance.",
       icon: Briefcase,
       color: "from-teal-500 to-teal-600",
-      image: "/truveda/ESIandEPFcompliance.jpg",
+      image: "/truveda/epf-esic.png",
     },
     {
       title: "Government Liaison",
@@ -356,7 +356,7 @@ const TalentriyaWebsite = () => {
         "At Talentriya, we understand that proactive collaboration with regulatory bodies is vital to building a compliant and sustainable business. Our dedicated government liaison team ensures smooth communication and coordination with central, state, and local departments—helping you navigate regulatory requirements efficiently and maintain strong government relations.",
       icon: UserCog,
       color: "from-violet-500 to-violet-600",
-      image: "/truveda/Liaisoning.jpg",
+      image: "/truveda/govt-liaison.png",
     },
   ];
 
@@ -700,9 +700,9 @@ const TalentriyaWebsite = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-3xl p-6 shadow-xl">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
+                  {/* <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
                     <Target className="w-6 h-6 text-white" />
-                  </div>
+                  </div> */}
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     Our Vision
                   </h3>
@@ -713,9 +713,9 @@ const TalentriyaWebsite = () => {
                   </p>
                 </div>
                 <div className="bg-white rounded-3xl p-6 shadow-xl ">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4">
+                  {/* <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4">
                     <Heart className="w-6 h-6 text-white" />
-                  </div>
+                  </div> */}
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     Our Mission
                   </h3>
@@ -733,7 +733,7 @@ const TalentriyaWebsite = () => {
               <div className="relative">
                 <div className=" rounded-3xl shadow-2xl">
                   <img
-                    src="/truveda-about-us.avif"
+                    src="/truveda/about.png"
                     alt="Talentriya Team"
                     className="rounded-2xl shadow-lg w-full h-auto max-w-2xl"
                     onError={(e) => {
@@ -813,8 +813,7 @@ const TalentriyaWebsite = () => {
                     <service.icon className="w-6 h-6 text-white" />
                   </div> */}
                 </div>
-
-                <div className="p-6">
+                <div className="p-6 ">
                   <h3 className="text-xl font-bold text-gray-800 mb-4">
                     {service.title}
                   </h3>
