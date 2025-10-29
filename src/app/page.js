@@ -1225,9 +1225,8 @@ const TalentriyaWebsite = () => {
               {/* Brand Column */}
               <div className="lg:col-span-1" data-aos="fade-up">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center shadow-lg border-2 border-blue-600">
-                    <span className="text-white font-bold text-xl">T</span>
-                  </div>
+                  {/* Custom SVG Logo */}
+                  <img src="/logos/tcs-footer.png" alt="Talentriya Logo" className="w-10 h-10 object-contain" />
                   <div>
                     <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
                       Talentriya
